@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Add <track> elements to a video for subtitles and captions. -->
+
+    <video width="320" height="240" controls>
+      <source src="movie.mp4" type="video/mp4" />
+      <source src="movie.ogg" type="video/ogg" />
+      <track
+        src="fgsubtitles_en.vtt"
+        kind="subtitles"
+        srclang="en"
+        label="English"
+      />
+      <track
+        src="fgsubtitles_no.vtt"
+        kind="subtitles"
+        srclang="no"
+        label="Norwegian"
+      />
+      Your browser does not support the video tag.
+    </video>
+  </body>
+</html>

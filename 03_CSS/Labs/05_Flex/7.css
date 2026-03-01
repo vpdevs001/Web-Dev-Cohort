@@ -1,0 +1,9 @@
+/* Set .grow to flex-grow 1. */
+
+.container {
+  display: flex;
+}
+
+.grow {
+    flex-grow: 1;
+}

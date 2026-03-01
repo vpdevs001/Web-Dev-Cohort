@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Create a form with action and method attributes. Understand how forms submit data to servers. -->
+
+    <fieldset>
+      <legend>Form</legend>
+      <form action="script.js" method="post">
+        <div>
+          <label for="email-input">Email:</label>
+          <input
+            placeholder="Enter email..."
+            required
+            id="email-input"
+            type="email"
+            maxlength="44"
+            pattern="A-Za-z"
+          />
+        </div>
+
+        <div>
+          <label for="password">password:</label>
+          <input
+            placeholder="Enter password..."
+            required
+            id="password"
+            type="password"
+            min="5"
+            max="32"
+          />
+        </div>
+
+        <div>
+          <label for="number">number:</label>
+          <input id="number" type="number" />
+        </div>
+
+        <div>
+          <label for="date-input">date:</label>
+          <input id="date-input" type="date" />
+        </div>
+
+        <button type="submit">Submit!</button>
+      </form>
+    </fieldset>
+  </body>
+</html>

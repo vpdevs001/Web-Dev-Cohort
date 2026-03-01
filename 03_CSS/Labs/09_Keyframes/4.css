@@ -1,0 +1,16 @@
+/* Set .alternate to animation-direction alternate. */
+
+.alternate {
+  animation: fadeIn 0.3s ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

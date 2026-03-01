@@ -1,0 +1,5 @@
+/* Set .box padding to: 10px top, 20px right, 10px bottom, 20px left (using shorthand). */
+
+.box {
+  padding: 10px 20px 10px 20px;
+}

@@ -1,0 +1,6 @@
+/* Set .spaced to gap 20px. */
+
+.spaced {
+  display: flex;
+  gap: 20px;
+}

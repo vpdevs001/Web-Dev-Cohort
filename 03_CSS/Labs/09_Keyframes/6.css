@@ -1,0 +1,15 @@
+/* Set .fill to animation-fill-mode forwards. */
+
+.fill {
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

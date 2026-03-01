@@ -1,0 +1,6 @@
+/* Set .column to flex-direction column. */
+
+.column {
+  display: flex;
+  flex-direction: column;
+}

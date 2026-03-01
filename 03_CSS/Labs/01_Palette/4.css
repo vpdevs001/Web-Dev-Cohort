@@ -1,0 +1,6 @@
+/* Create an ID selector called #header and set its color to darkblue and font-size to 32px. */
+
+#header {
+    color: darkblue;
+    font-size: 32px;
+}

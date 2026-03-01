@@ -1,0 +1,9 @@
+/* Set .grid to use grid-template-areas. */
+
+.grid {
+  display: grid;
+  grid-template-areas:
+    "Header" "Header" "Header"
+    "Sidebar" "Main" "Main"
+    "Sidebar" "Main" "Main";
+}

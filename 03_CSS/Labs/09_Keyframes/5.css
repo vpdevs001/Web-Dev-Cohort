@@ -1,0 +1,15 @@
+/* Set .delayed to animation-delay 1s. */
+
+.delayed {
+  animation: fadeIn 0.3s 1s infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

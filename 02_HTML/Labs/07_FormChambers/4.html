@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Create a form with radio buttons (single choice), checkboxes (multiple choices), and a select dropdown. Show different ways to let users choose options. -->
+
+    <fieldset>
+      <legend>Form</legend>
+      <form>
+        <div>
+          <h2>Fav Programming Lang</h2>
+          <input id="JS-input" type="radio" value="JS" />
+          <label for="JS-input">JS</label>
+          <input id="C-input" type="radio" value="C" />
+          <label for="C-input">C</label>
+          <input id="C++-input" type="radio" value="C++" />
+          <label for="C++-input">C++</label>
+        </div>
+
+        <div>
+          <h2>Fav Programming Lang</h2>
+          <input id="JS-input" type="checkbox" value="JS" />
+          <label for="JS-input">JS</label>
+          <input id="C-input" type="checkbox" value="C" />
+          <label for="C-input">C</label>
+          <input id="C++-input" type="checkbox" value="C++" />
+          <label for="C++-input">C++</label>
+        </div>
+
+        <div>
+          <h2>Fav Programming Lang</h2>
+          <label for="programming-lang">programming lang</label>
+          <select name="programming-lang" id="programming-lang">
+            <option value="JS">JS</option>
+            <option value="C">C</option>
+            <option value="C++">C++</option>
+          </select>
+        </div>
+
+        <button type="submit">Submit!</button>
+      </form>
+    </fieldset>
+  </body>
+</html>

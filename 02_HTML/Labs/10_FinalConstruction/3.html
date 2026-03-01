@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My First Webpage</title>
+  </head>
+  <body>
+    <!-- Build a complete registration form with: text, email, password, number, date inputs, radio buttons, checkboxes, select, textarea, file upload, all with proper validation and labels. -->
+
+    <fieldset>
+      <legend>Form</legend>
+      <form action="script.js" method="post">
+        <div>
+          <label for="email-input">Email:</label>
+          <input
+            placeholder="Enter email..."
+            required
+            id="email-input"
+            type="email"
+            maxlength="44"
+            pattern="A-Za-z"
+          />
+        </div>
+
+        <div>
+          <label for="password">password:</label>
+          <input
+            placeholder="Enter password..."
+            required
+            id="password"
+            type="password"
+            min="5"
+            max="32"
+          />
+        </div>
+
+        <div>
+          <label for="number">number:</label>
+          <input required id="number" type="number" />
+        </div>
+
+        <div>
+          <label for="date-input">date:</label>
+          <input id="date-input" type="date" />
+        </div>
+
+        <button type="submit">Submit!</button>
+      </form>
+
+      <legend>Form</legend>
+      <form>
+        <div>
+          <h2>Fav Programming Lang</h2>
+          <input id="JS-input" type="radio" value="JS" />
+          <label for="JS-input">JS</label>
+          <input id="C-input" type="radio" value="C" />
+          <label for="C-input">C</label>
+          <input id="C++-input" type="radio" value="C++" />
+          <label for="C++-input">C++</label>
+        </div>
+
+        <div>
+          <h2>Fav Programming Lang</h2>
+          <input id="JS-input" type="checkbox" value="JS" />
+          <label for="JS-input">JS</label>
+          <input id="C-input" type="checkbox" value="C" />
+          <label for="C-input">C</label>
+          <input id="C++-input" type="checkbox" value="C++" />
+          <label for="C++-input">C++</label>
+        </div>
+
+        <div>
+          <h2>Fav Programming Lang</h2>
+          <label for="programming-lang">programming lang</label>
+          <select name="programming-lang" id="programming-lang">
+            <option value="JS">JS</option>
+            <option value="C">C</option>
+            <option value="C++">C++</option>
+          </select>
+        </div>
+
+        <button type="submit">Submit!</button>
+      </form>
+
+      <legend>Form</legend>
+      <form>
+        <label for="feedback-input">feedback:</label>
+        <textarea
+          rows="2"
+          cols="10"
+          name="feedback-input"
+          id="feedback-input"
+        ></textarea>
+        <button type="submit">Submit!</button>
+      </form>
+
+      <legend>Form</legend>
+      <form>
+        <div>
+          <label for="file-input">file:</label>
+          <input
+            id="file-input"
+            type="file"
+            multiple
+            accept="image/png image/webp image/jpg"
+          />
+        </div>
+        <button type="submit">Submit!</button>
+      </form>
+
+    <fieldset>
+      <legend>Form</legend>
+      <form>
+        <div>
+          <label for="Programming-Language-input">Programming Language:</label>
+          <input
+            list="Programming-Language-list"
+            id="Programming-Language-input"
+            type="text"
+          />
+        </div>
+
+        <datalist id="Programming-Language-list">
+          <option value="JS">JS</option>
+          <option value="C">C</option>
+          <option value="C++">C++</option>
+        </datalist>
+        <button type="submit">Submit!</button>
+      </form>
+    </fieldset>
+  </body>
+</html>

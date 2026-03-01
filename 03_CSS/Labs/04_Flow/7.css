@@ -1,0 +1,6 @@
+/* Set .front to z-index 10. */
+
+.front {
+  position: relative;
+  z-index: 10;
+}

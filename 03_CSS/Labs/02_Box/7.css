@@ -1,0 +1,10 @@
+/* Create a .complete-box with: width 250px, height 100px, padding 15px, margin 20px, border 3px solid green, and box-sizing border-box. */
+
+.complete-box {
+    width: 250px;
+    height: 100px;
+    padding: 15px;
+    margin: 20px;
+    border: 3px solid green;
+    box-sizing: border-box;
+}

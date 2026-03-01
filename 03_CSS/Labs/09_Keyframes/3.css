@@ -1,0 +1,16 @@
+/* Set .infinite to animation-iteration-count infinite. */
+
+.infinite {
+  animation: fadeIn;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Create an input with a datalist for autocomplete suggestions. Users can type freely but get helpful suggestions. -->
+
+    <fieldset>
+      <legend>Form</legend>
+      <form>
+        <div>
+          <label for="Programming-Language-input">Programming Language:</label>
+          <input
+            list="Programming-Language-list"
+            id="Programming-Language-input"
+            type="text"
+          />
+        </div>
+
+        <datalist id="Programming-Language-list">
+          <option value="JS">JS</option>
+          <option value="C">C</option>
+          <option value="C++">C++</option>
+        </datalist>
+        <button type="submit">Submit!</button>
+      </form>
+    </fieldset>
+  </body>
+</html>

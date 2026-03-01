@@ -1,0 +1,16 @@
+/* Set .slow to animation-duration 3s. */
+
+.slow {
+  animation: fadeIn;
+  animation-duration: 3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

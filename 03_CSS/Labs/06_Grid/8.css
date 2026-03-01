@@ -1,0 +1,7 @@
+/* Create a complete grid with 3 columns and 20px gap. */
+
+.layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}

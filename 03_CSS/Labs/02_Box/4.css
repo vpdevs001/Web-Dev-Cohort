@@ -1,0 +1,5 @@
+/* Set box-sizing to border-box on the .box element. */
+
+.box {
+  box-sizing: border-box;
+}

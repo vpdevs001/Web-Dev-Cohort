@@ -1,0 +1,6 @@
+/* Set .origin to transform-origin: top left. */
+
+.origin {
+  transform: origin;
+  transform-origin: top left;
+}

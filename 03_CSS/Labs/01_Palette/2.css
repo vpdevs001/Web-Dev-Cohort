@@ -1,0 +1,5 @@
+/* Set the body's background-color to lightblue. Notice how the entire page changes! */
+
+body {
+  background-color: lightblue;
+}

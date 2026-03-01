@@ -1,0 +1,5 @@
+/* Set .span-2 to grid-column: span 2. */
+
+.span-2 {
+  grid-column: span 2;
+}

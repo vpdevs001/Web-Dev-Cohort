@@ -1,0 +1,5 @@
+/* Set .rounded to border-radius 10px. */
+
+.rounded {
+  border-radius: 10px;
+}

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Create a complete product page with: product images, specification table, feature lists, video demo, and order form. Demonstrate comprehensive HTML knowledge. -->
+
+    <section>
+      <figure>
+        <picture>
+          <source srcset="small-beginning-img" media="(min-width: 640px)" />
+          <source srcset="medium-beginning-img" media="(min-width: 1024px)" />
+          <img src="large-beginning-img" alt="Beginning" />
+        </picture>
+        <figcaption>Chai Code Beginning</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source srcset="small-beginning-img" media="(min-width: 640px)" />
+          <source srcset="medium-beginning-img" media="(min-width: 1024px)" />
+          <img src="large-beginning-img" alt="Beginning" />
+        </picture>
+        <figcaption>Chai Code Beginning</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <table>
+        <colgroup>
+          <col span="2" style="background-color: aqua" />
+          <col span="1" style="background-color: yellow" />
+        </colgroup>
+        <caption>
+          Time Table
+        </caption>
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Price</th>
+            <th>Instructor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="2">NodeJS</td>
+            <td rowspan="3">399</td>
+            <td>Hitesh, Piyush</td>
+          </tr>
+          <tr>
+            <td colspan="2">React</td>
+            <td rowspan="3">399</td>
+            <td>Hitesh, Suraj</td>
+          </tr>
+          <tr>
+            <td>Web Dev</td>
+            <td>399</td>
+            <td>Hitesh</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Alphabet</td>
+            <td>Number</td>
+            <td>Alphabet</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section>
+      <ol>
+        <li>
+          <ul>
+            <li>Networking</li>
+            <li>Git</li>
+            <li>IDE</li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>Backend</li>
+            <li>ReactJS</li>
+            <li>NextJS</li>
+          </ul>
+        </li>
+      </ol>
+      <h2>Frequently Asked Questions</h2>
+
+      <dl>
+        <dt>How to Join Class?</dt>
+        <dd>Zoom link will be given on chaicode.com.</dd>
+        <dt>What will be the class timing?</dt>
+        <dd>Class timing is 8pm for sat, sun and 9pm for thu</dd>
+        <dt>When will the cohort be finished</dt>
+        <dd>
+          The cohort is expected to end after 6 months but it might get a bit
+          longer.
+        </dd>
+      </dl>
+    </section>
+
+    <section>
+      <video width="320" height="240" controls>
+        <source src="movie.mp4" type="video/mp4" />
+        <source src="movie.ogg" type="video/ogg" />
+        <track
+          src="fgsubtitles_en.vtt"
+          kind="subtitles"
+          srclang="en"
+          label="English"
+        />
+        <track
+          src="fgsubtitles_no.vtt"
+          kind="subtitles"
+          srclang="no"
+          label="Norwegian"
+        />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <fieldset>
+      <legend>Form</legend>
+      <form>
+        <label for="feedback-input">feedback:</label>
+        <textarea
+          rows="2"
+          cols="10"
+          name="feedback-input"
+          id="feedback-input"
+        ></textarea>
+        <button type="submit">Submit!</button>
+      </form>
+    </fieldset>
+  </body>
+</html>

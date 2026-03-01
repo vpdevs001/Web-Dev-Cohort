@@ -1,0 +1,6 @@
+/* Create a .responsive-img selector with max-width: 100% and height: auto. This ensures images scale down to fit their container but never exceed their natural size, maintaining aspect ratio. */
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+}

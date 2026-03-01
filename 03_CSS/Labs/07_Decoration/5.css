@@ -1,0 +1,5 @@
+/* Set .gradient to a linear gradient. */
+
+.gradient {
+  background: linear-gradient(135deg, skyblue, darkblue);
+}

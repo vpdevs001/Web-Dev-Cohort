@@ -1,0 +1,5 @@
+/* Add a 2px solid red border to the .box element. */
+
+.box {
+  border: 2px solid red;
+}

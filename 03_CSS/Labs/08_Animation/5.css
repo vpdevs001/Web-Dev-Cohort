@@ -1,0 +1,5 @@
+/* Set .multi to transition: all 0.3s ease. */
+
+.multi {
+  transition: all 0.3s ease;
+}

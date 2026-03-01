@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Create a form with file upload input. Use accept attribute to specify allowed file types and multiple to allow multiple files. -->.
+
+    <fieldset>
+      <legend>Form</legend>
+      <form>
+        <div>
+          <label for="file-input">file:</label>
+          <input
+            id="file-input"
+            type="file"
+            multiple
+            accept="image/png image/webp image/jpg"
+          />
+        </div>
+        <button type="submit">Submit!</button>
+      </form>
+    </fieldset>
+  </body>
+</html>

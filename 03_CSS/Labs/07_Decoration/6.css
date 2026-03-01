@@ -1,0 +1,5 @@
+/* Set .bg-cover to background-size cover. */
+
+.bg-cover {
+  background-size: cover;
+}
