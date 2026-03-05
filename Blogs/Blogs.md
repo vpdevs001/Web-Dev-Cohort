@@ -114,3 +114,9 @@
 [Read Blog](https://vedpandeydev.hashnode.dev/array-methods-you-must-know)
 
 --- 
+
+## Function Declaration vs Function Expression: What’s the Difference?
+
+[Read Blog](https://vedpandeydev.hashnode.dev/function-declaration-vs-function-expression-what-s-the-difference)
+
+---
