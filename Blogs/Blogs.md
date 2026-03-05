@@ -102,3 +102,15 @@
 [Read Blog](https://vedpandeydev.hashnode.dev/control-flow-in-javascript-if-else-and-switch-explained)
 
 ---
+
+## JavaScript Arrays 101
+
+[Read Blog](https://vedpandeydev.hashnode.dev/javascript-arrays-101)
+
+---
+
+## Array Methods You Must Know
+
+[Read Blog](https://vedpandeydev.hashnode.dev/array-methods-you-must-know)
+
+--- 
