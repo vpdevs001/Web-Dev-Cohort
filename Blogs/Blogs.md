@@ -97,6 +97,7 @@
 [Read Blog](https://vedpandeydev.hashnode.dev/understanding-variables-and-data-types-in-javascript)
 
 ---
+
 ## Control Flow in JavaScript: If, Else, and Switch Explained
 
 [Read Blog](https://vedpandeydev.hashnode.dev/control-flow-in-javascript-if-else-and-switch-explained)
@@ -113,10 +114,16 @@
 
 [Read Blog](https://vedpandeydev.hashnode.dev/array-methods-you-must-know)
 
---- 
+---
 
 ## Function Declaration vs Function Expression: What’s the Difference?
 
 [Read Blog](https://vedpandeydev.hashnode.dev/function-declaration-vs-function-expression-what-s-the-difference)
+
+---
+
+## Understanding Objects in JavaScript
+
+[Read Blog](https://vedpandeydev.hashnode.dev/understanding-objects-in-javascript)
 
 ---
