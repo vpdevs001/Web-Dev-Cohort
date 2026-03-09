@@ -81,7 +81,7 @@ Feel free to **star the repository**.
 
 ## 🤝 Connect With Me
 
-[LinkedIn](www.linkedin.com/in/ved-pandey-48bb66385) •
+[LinkedIn](https://www.linkedin.com/in/ved-pandey-48bb66385/) •
 [GitHub](https://github.com/vpdevs001) •
 [X / Twitter](https://x.com/Ved_PandeyOG)
 

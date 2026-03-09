@@ -133,3 +133,9 @@
 [Read Blog](https://vedpandeydev.hashnode.dev/arrow-functions-in-javascript-a-simpler-way-to-write-functions)
 
 ---
+
+## Understanding Object-Oriented Programming in JavaScript
+
+[Read Blog](https://vedpandeydev.hashnode.dev/understanding-object-oriented-programming-in-javascript)
+
+---
