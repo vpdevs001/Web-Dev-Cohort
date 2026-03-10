@@ -139,3 +139,9 @@
 [Read Blog](https://vedpandeydev.hashnode.dev/understanding-object-oriented-programming-in-javascript)
 
 ---
+
+## The Magic of this, call(), apply(), and bind() in JavaScript
+
+[Read Blog](https://vedpandeydev.hashnode.dev/the-magic-of-this-call-apply-and-bind-in-javascript)
+
+---
