@@ -1,0 +1,25 @@
+{
+  "name": "ved-chai-tailwind",
+  "version": "1.0.4",
+  "description": "A lightweight utility class engine for vanilla HTML",
+  "type": "module",
+  "main": "src/script.js",
+  "module": "src/script.js",
+  "exports": "./src/script.js",
+  "keywords": [
+    "css",
+    "utility",
+    "classes",
+    "vanilla"
+  ],
+  "license": "MIT",
+  "author": "Ved Pandey",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vpdevs001/Chai-Tailwind.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vpdevs001/Chai-Tailwind/issues"
+  },
+  "homepage": "https://github.com/vpdevs001/Chai-Tailwind#readme"
+}
