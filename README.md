@@ -19,13 +19,14 @@ Every folder in this repo represents a topic covered in the cohort, with notes, 
 ```
 Web-Dev-Cohort/
 │
-├── 01_Git/               # Git basics, commands & version control
-├── 02_HTML/              # HTML fundamentals & page structure
-├── 03_CSS/               # Styling, layouts & responsive design
-├── 04_JS/                # JavaScript fundamentals & core concepts
-├── 05_Backend-and-TS/    # Backend development & TypeScript
-├── Blogs/                # Blog assignments
-└── T-Classes/            # Additional concepts & better understanding
+├── 01_Git/               # All learning of Git
+├── 02_HTML/              # All learning of HTML + Code Challenges
+├── 03_CSS/               # All learning of CSS + Code Challenges
+├── 04_JS/                # All learning of JS + Code Challenges
+├── 05_Backend-and-TS/    # All learning of Backend & TypeScript
+├── Assignments/          # All project assignments
+├── Blogs/                # All blog assignments
+└── T-Classes/            # Additional classes for doubt solving & deeper topic coverage
 ```
 
 ---
