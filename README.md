@@ -1,93 +1,85 @@
-# Web Dev Cohort 🚀
+# 🌐 Web Dev Cohort 2026 — Learning Journey
 
-This repository documents my journey through the **Web Development Cohort 2026**.  
-Here I am learning and practicing modern web development step-by-step.
-
-The cohort is taught by **Hitesh Choudhary Sir** and **Piyush Garg Sir**, and this repo contains all the notes, practice code, and projects I build during the learning process.
+> A learning repository documenting my day-by-day progress in the **Web Dev Cohort 2026** by [ChaiCode](https://chaicode.com), instructed by **Hitesh Choudhary Sir** and **Piyush Garg Sir**.
 
 ---
 
-# 📚 What This Repository Contains
+## 🎯 About This Repo
 
-The repository is organized according to the topics covered in the cohort.
+This is my personal learning space where I document everything I study and build during the **Web Dev Cohort 2026**. The cohort covers the full spectrum of modern web development — from the fundamentals of Git & HTML all the way to Backend and TypeScript.
+
+Every folder in this repo represents a topic covered in the cohort, with notes, code practice, and mini-projects added as I progress.
+
+> 🚧 **Actively updated** — new code and learnings are pushed regularly as the cohort moves forward.
+
+---
+
+## 📁 Repo Structure
 
 ```
-Web-Dev-Cohort
+Web-Dev-Cohort/
 │
-├── 01_Git
-│ └── Git basics, commands, and version control practice
-│
-├── 02_HTML
-│ └── HTML fundamentals and structure of web pages
-│
-├── 03_CSS
-│ └── Styling, layouts, and responsive design
-│
-├── 04_JS
-│ └── JavaScript fundamentals and core concepts
-│
-├── 05_Backend-and-TS
-│ └── Backend development and TypeScript
-│
-├── Blogs
-│ └── Link to blogs assignment
-│
-├── T-Classes
-│ └── Addtional Concepts, better understanding
+├── 01_Git/               # Git basics, commands & version control
+├── 02_HTML/              # HTML fundamentals & page structure
+├── 03_CSS/               # Styling, layouts & responsive design
+├── 04_JS/                # JavaScript fundamentals & core concepts
+├── 05_Backend-and-TS/    # Backend development & TypeScript
+├── Blogs/                # Blog assignments
+└── T-Classes/            # Additional concepts & better understanding
 ```
 
 ---
 
-# 🎯 Goals of This Repository
+## 🛠️ Tech Stack Covered
 
-- Document my **Web Development learning journey**
-- Practice concepts taught in the cohort
-- Maintain organized **notes and code examples**
+| Technology | Topics |
+|---|---|
+| **Git & GitHub** | Version control, branching, collaboration |
+| **HTML** | Semantic markup, page structure |
+| **CSS** | Flexbox, Grid, responsive design |
+| **JavaScript** | Core JS, DOM, ES6+ features |
+| **TypeScript** | Types, interfaces, TS with JS |
+| **Backend** | Server-side development concepts |
+
+---
+
+## 🏆 Cohort Details
+
+| Detail | Info |
+|---|---|
+| **Cohort Name** | Web Dev Cohort 2026 |
+| **Platform** | ChaiCode |
+| **Instructors** | Hitesh Choudhary Sir & Piyush Garg Sir |
+| **Focus** | Full Stack Web Development |
+| **Status** | 🟢 Ongoing |
+
+---
+
+## 🎯 Goals
+
+- Document my complete **web development learning journey**
+- Practice and retain concepts taught in each session
+- Build organized, well-structured **code references**
 - Track progress from **beginner → full stack developer**
 
 ---
 
-# 🛠 Tech Covered
+## 🙋‍♂️ About Me
 
-During this cohort I will be learning and practicing:
+Hey! I'm **Ved Pandey**, a developer building in public and leveling up through structured cohort learning. This repo is a reflection of my consistency and growth.
 
-- Git & GitHub
-- HTML
-- CSS
-- JavaScript
-- TypeScript
-- Backend Development
-- Full Stack Concepts
+Feel free to connect with me:
+
+[![X (Twitter)](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/Ved_PandeyOG)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ved-pandey-48bb66385/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vpdevs001)
 
 ---
 
-# 📈 Progress
+## ⭐ Support
 
-This repository will continue to grow as I progress through the cohort and build more projects.
-
----
-
-# 🤝 Contributions
-
-This is primarily a **personal learning repository**, but suggestions and improvements are always welcome.
+If you find this repo helpful or are on a similar learning journey, feel free to **star** ⭐ it!
 
 ---
 
-# ⭐ If You Find This Helpful
-
-Feel free to **star the repository**.
-
----
-
-## 🤝 Connect With Me
-
-[LinkedIn](https://www.linkedin.com/in/ved-pandey-48bb66385/) •
-[GitHub](https://github.com/vpdevs001) •
-[X / Twitter](https://x.com/Ved_PandeyOG)
-
----
-
-**Author**
-
-Ved Pandey  
-Learning Web Development • Building in Public
+*Made with ❤️ while learning Full Stack Web Development at ChaiCode's Web Dev Cohort 2026*
