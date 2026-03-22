@@ -145,3 +145,15 @@
 [Read Blog](https://vedpandeydev.hashnode.dev/the-magic-of-this-call-apply-and-bind-in-javascript)
 
 ---
+
+## JavaScript Modules: Import and Export Explained
+
+[Read Blog](https://vedpandeydev.hashnode.dev/javascript-modules-import-and-export-explained)
+
+---
+
+## Event Phases in JS: The Part of Events You Never See
+
+[Read Blog](https://vedpandeydev.hashnode.dev/event-phases-in-js-the-part-of-events-you-never-see)
+
+---
