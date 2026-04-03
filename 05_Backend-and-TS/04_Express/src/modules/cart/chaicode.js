@@ -1,1 +1,1 @@
-console.log("aate h yaha baad me")
+console.log("aate h yaha baad me");

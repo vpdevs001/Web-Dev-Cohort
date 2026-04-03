@@ -13,12 +13,11 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   const { user, accessToken, refreshToken } = await authService.login(req.body);
 
-  // Refresh token goes in httpOnly cookie — not accessible to JS
   res.cookie("refreshToken", refreshToken, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "strict",
-    maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+    maxAge: 7 * 24 * 60 * 60 * 1000,
   });
 
   ApiResponse.ok(res, "Login successful", { user, accessToken });

@@ -12,7 +12,6 @@ import {
   sendResetPasswordEmail,
 } from "../../common/config/email.js";
 
-// Hash refresh token before storing — same approach as reset tokens
 const hashToken = (token) =>
   crypto.createHash("sha256").update(token).digest("hex");
 
@@ -30,7 +29,6 @@ const register = async ({ name, email, password, role }) => {
     verificationToken: hashedToken,
   });
 
-  // Don't let email failure crash registration — user is already created
   try {
     await sendVerificationEmail(email, rawToken);
   } catch (err) {
@@ -58,7 +56,6 @@ const login = async ({ email, password }) => {
   const accessToken = generateAccessToken({ id: user._id, role: user.role });
   const refreshToken = generateRefreshToken({ id: user._id });
 
-  // Store hashed refresh token in DB so it can be invalidated on logout
   user.refreshToken = hashToken(refreshToken);
   await user.save({ validateBeforeSave: false });
 
@@ -69,7 +66,6 @@ const login = async ({ email, password }) => {
   return { user: userObj, accessToken, refreshToken };
 };
 
-// Issues a new access token using a valid refresh token
 const refresh = async (token) => {
   if (!token) throw ApiError.unauthorized("Refresh token missing");
 
@@ -78,7 +74,6 @@ const refresh = async (token) => {
   const user = await User.findById(decoded.id).select("+refreshToken");
   if (!user) throw ApiError.unauthorized("User no longer exists");
 
-  // Verify the refresh token matches what's stored (prevents reuse of old tokens)
   if (user.refreshToken !== hashToken(token)) {
     throw ApiError.unauthorized("Invalid refresh token — please log in again");
   }
@@ -89,7 +84,6 @@ const refresh = async (token) => {
 };
 
 const logout = async (userId) => {
-  // Clear stored refresh token so it can't be reused
   await User.findByIdAndUpdate(userId, { refreshToken: null });
 };
 
@@ -99,9 +93,6 @@ const verifyEmail = async (token) => {
     throw ApiError.badRequest("Invalid or expired verification token");
   }
 
-  // DB stores SHA256(raw). Links / email use the raw token — we hash for lookup.
-  // If you paste the hash from MongoDB into Postman, hashing again would not match;
-  // so we also try a direct match on the stored value.
   const hashedInput = hashToken(trimmed);
   let user = await User.findOne({ verificationToken: hashedInput }).select(
     "+verificationToken",

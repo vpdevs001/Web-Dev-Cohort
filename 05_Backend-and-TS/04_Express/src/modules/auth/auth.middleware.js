@@ -2,7 +2,6 @@ import ApiError from "../../common/utils/api-error.js";
 import { verifyAccessToken } from "../../common/utils/jwt.utils.js";
 import User from "./auth.model.js";
 
-// Authenticates using the short-lived access token (header or cookie)
 const authenticate = async (req, res, next) => {
   let token;
 
@@ -25,7 +24,6 @@ const authenticate = async (req, res, next) => {
   next();
 };
 
-// Higher-order function — returns middleware configured with allowed roles
 const authorize = (...roles) => {
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {
