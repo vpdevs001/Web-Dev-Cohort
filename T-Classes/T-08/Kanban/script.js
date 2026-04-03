@@ -2,16 +2,14 @@ const columns = document.querySelectorAll(".column");
 let draggedTask = null;
 
 document.addEventListener("click", (e) => {
-  e.preventDefault();
-
   if (e.target.classList.contains("add-btn")) {
-    const text = prompt("Enter your task");
+    const text = prompt("Enter Task!");
 
     if (!text) return;
 
     const task = document.createElement("div");
-    text.className = "task";
-    text.textContent = text;
+    task.className = "task";
+    task.textContent = text;
 
     task.setAttribute("draggable", true);
 
@@ -35,14 +33,19 @@ document.addEventListener("dragend", (e) => {
 
 columns.forEach((col) => {
   col.addEventListener("dragover", (e) => {
+    e.preventDefault();
     col.classList.add("drag-over");
   });
 
   col.addEventListener("dragleave", (e) => {
-    col.classList.remove("drop-over");
+    col.classList.remove("drag-over");
   });
 
   col.addEventListener("drop", (e) => {
     col.classList.remove("drag-over");
+
+    if (draggedTask) {
+      col.querySelector(".tasks").appendChild(draggedTask);
+    }
   });
 });
