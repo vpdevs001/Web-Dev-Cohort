@@ -157,3 +157,9 @@
 [Read Blog](https://vedpandeydev.hashnode.dev/event-phases-in-js-the-part-of-events-you-never-see)
 
 ---
+
+## Template Literals in JavaScript
+
+[Read Blog](https://vedpandeydev.hashnode.dev/template-literals-in-javascript)
+
+---
