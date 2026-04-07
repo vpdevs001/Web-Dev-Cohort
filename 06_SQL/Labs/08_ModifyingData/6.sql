@@ -1,3 +1,2 @@
-SELECT name, country
-FROM users 
-WHERE country NOT IN ('USA', 'Canada')
+UPDATE products
+SET price = price + 50

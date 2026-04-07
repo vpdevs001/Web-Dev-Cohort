@@ -1,1 +1,3 @@
-SELECT name, age FROM users WHERE age > 35
+INSERT INTO categories (name, description) VALUES
+('Food', 'Food and beverages'),
+('Automotive', 'Car parts and accessories');

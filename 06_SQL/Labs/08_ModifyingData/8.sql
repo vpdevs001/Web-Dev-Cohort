@@ -1,4 +1,1 @@
-SELECT name, email
-FROM users
-WHERE name
-LIKE 'A%'
+DELETE FROM orders WHERE status IS NULL;

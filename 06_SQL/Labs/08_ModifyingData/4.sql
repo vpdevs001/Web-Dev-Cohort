@@ -1,3 +1,3 @@
-SELECT name, country
-FROM users
-WHERE country = 'Canada' OR country = 'UK'
+UPDATE products
+SET stock = 75
+WHERE id = 1

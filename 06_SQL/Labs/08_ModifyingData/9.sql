@@ -1,3 +1,3 @@
-SELECT name, phone
-FROM users
-WHERE phone IS NULL
+DELETE FROM reviews r
+USING users u
+WHERE r.user_id = u.id AND u.country = 'Australia';
