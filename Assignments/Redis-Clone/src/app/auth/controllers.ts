@@ -1,10 +1,26 @@
 import type { Request, Response } from "express";
-import { loginPayloadModel } from "./models";
+import { loginPayloadModel, signupPayloadModel } from "./models";
 import APIError from "../common/error";
 import APIResponse from "../common/response";
 import ApiResponse from "../common/response";
 
 class AuthController {
+  public static async handleSignup(req: Request, res: Response) {
+    const validationResult = await signupPayloadModel.safeParseAsync(req.body);
+
+    if (!validationResult.success) {
+      throw APIError.badRquest("Invalid credentials");
+    }
+
+    const { firstName, lastName, email, password } = validationResult.data;
+
+    
+
+    return APIResponse.created(res, "Signup successful", {
+      token: "dummy-jwt-token", // Replace with a valid JWT token
+    });
+  }
+
   public static async handleLogin(req: Request, res: Response) {
     const validationResult = await loginPayloadModel.safeParseAsync(req.body);
 
@@ -17,18 +33,6 @@ class AuthController {
     });
 
     // Add database
-  }
-
-  public static async handleSignup(req: Request, res: Response) {
-    const validationResult = await loginPayloadModel.safeParseAsync(req.body);
-
-    if (!validationResult.success) {
-      throw APIError.badRquest("Invalid credentials");
-    }
-
-    return APIResponse.created(res, "Signup successful", {
-      token: "dummy-jwt-token", // Replace with a valid JWT token
-    });
   }
 }
 
