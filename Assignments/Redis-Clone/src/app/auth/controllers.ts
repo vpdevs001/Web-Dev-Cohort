@@ -3,36 +3,81 @@ import { loginPayloadModel, signupPayloadModel } from "./models";
 import APIError from "../common/error";
 import APIResponse from "../common/response";
 import ApiResponse from "../common/response";
+import { db } from "../../db";
+import { usersTable } from "../../db/models/user.model";
+import { eq } from "drizzle-orm";
+import { createHmac, randomBytes } from "node:crypto";
+import { createUserToken } from "./utils/tokens";
+import bcrypt from 'bcryptjs'
 
 class AuthController {
   public static async handleSignup(req: Request, res: Response) {
     const validationResult = await signupPayloadModel.safeParseAsync(req.body);
 
     if (!validationResult.success) {
-      throw APIError.badRquest("Invalid credentials");
+      throw APIError.badRequest("Invalid credentials");
     }
 
     const { firstName, lastName, email, password } = validationResult.data;
 
-    
+    const salt = randomBytes(32).toString("hex");
+    const hashedPassword = createHmac("sha256", salt)
+      .update(password)
+      .digest("hex");
 
-    return APIResponse.created(res, "Signup successful", {
-      token: "dummy-jwt-token", // Replace with a valid JWT token
-    });
+    try {
+      const [user] = await db
+        .insert(usersTable)
+        .values({
+          firstName,
+          lastName,
+          email,
+          password: hashedPassword,
+          salt,
+        })
+        .returning({ id: usersTable.id });
+
+      return APIResponse.created(res, "Signup successful", {
+        data: user.id,
+      });
+    } catch (error: any) {
+      if (error.code === "23505") {
+        return APIError.conflict("User with this email already exists");
+      }
+    }
   }
 
   public static async handleLogin(req: Request, res: Response) {
     const validationResult = await loginPayloadModel.safeParseAsync(req.body);
 
     if (!validationResult.success) {
-      throw APIError.badRquest("Invalid credentials");
+      throw APIError.badRequest("Invalid credentials");
     }
 
-    return ApiResponse.ok(res, "Login successful", {
-      token: "dummy-jwt-token", // Replace with a valid JWT token
-    });
+    const { email, password } = validationResult.data;
 
-    // Add database
+    const [user] = await db
+      .select()
+      .from(usersTable)
+      .where(eq(usersTable.email, email))
+      .limit(1);
+
+    if (!user) {
+      throw APIError.notFound("User not found");
+    }
+
+    const salt = user.salt;
+    const hashedPassword = createHmac("sha256", salt)
+      .update(password)
+      .digest("hex");
+
+    if (hashedPassword !== user.password) {
+      throw APIError.badRequest("Invalid credentials");
+    }
+
+    const token = createUserToken({ id: user.id });
+
+    return ApiResponse.ok(res, "Login successful", { token });
   }
 }
 

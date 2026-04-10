@@ -7,8 +7,12 @@ class APIError extends Error {
     this.statusCode = statusCode;
   }
   
-  static badRquest(message: string) {
+  static badRequest(message: string) {
     return new APIError(message, 400);
+  }
+
+  static unauthorized(message: string) {
+    return new APIError(message, 401);
   }
 
   static notFound(message: string) {
