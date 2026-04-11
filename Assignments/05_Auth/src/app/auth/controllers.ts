@@ -2,13 +2,11 @@ import type { Request, Response } from "express";
 import { loginPayloadModel, signupPayloadModel } from "./models";
 import APIError from "../common/error";
 import APIResponse from "../common/response";
-import ApiResponse from "../common/response";
 import { db } from "../../db";
 import { usersTable } from "../../db/models/user.model";
 import { eq } from "drizzle-orm";
 import { createHmac, randomBytes } from "node:crypto";
 import { createUserToken } from "./utils/tokens";
-import bcrypt from 'bcryptjs'
 
 class AuthController {
   public static async handleSignup(req: Request, res: Response) {
@@ -28,22 +26,16 @@ class AuthController {
     try {
       const [user] = await db
         .insert(usersTable)
-        .values({
-          firstName,
-          lastName,
-          email,
-          password: hashedPassword,
-          salt,
-        })
+        .values({ firstName, lastName, email, password: hashedPassword, salt })
         .returning({ id: usersTable.id });
 
-      return APIResponse.created(res, "Signup successful", {
-        data: user.id,
-      });
+      return APIResponse.created(res, "Signup successful", { data: user.id });
     } catch (error: any) {
       if (error.code === "23505") {
-        return APIError.conflict("User with this email already exists");
+        throw APIError.conflict("User with this email already exists");
       }
+
+      throw error;
     }
   }
 
@@ -77,7 +69,7 @@ class AuthController {
 
     const token = createUserToken({ id: user.id });
 
-    return ApiResponse.ok(res, "Login successful", { token });
+    return APIResponse.ok(res, "Login successful", { token });
   }
 }
 

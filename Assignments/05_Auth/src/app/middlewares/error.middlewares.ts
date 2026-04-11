@@ -1,0 +1,24 @@
+import type { Request, Response, NextFunction } from "express";
+import APIError from "../common/error";
+
+export function errorMiddleware() {
+  return function (
+    err: unknown,
+    req: Request,
+    res: Response,
+    next: NextFunction,
+  ) {
+    if (err instanceof APIError) {
+      return res.status(err.statusCode).json({
+        success: false,
+        message: err.message,
+      });
+    }
+
+    console.error("Unhandled error:", err);
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error",
+    });
+  };
+}
