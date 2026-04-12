@@ -163,3 +163,9 @@
 [Read Blog](https://vedpandeydev.hashnode.dev/template-literals-in-javascript)
 
 ---
+
+## MasterClass on Destructuring in Javascript
+
+[Read Blog](https://vedpandeydev.hashnode.dev/destructuring-in-javascript)
+
+---
