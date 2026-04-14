@@ -85,4 +85,7 @@
     [Read Blog](https://vedpandeydev.hashnode.dev/destructuring-in-javascript)  
 
 29. ## Deep Dive in Error Handling in JavaScript  
-    [Read Blog](https://vedpandeydev.hashnode.dev/deep-dive-in-error-handling-in-javascript)  
+    [Read Blog](https://vedpandeydev.hashnode.dev/deep-dive-in-error-handling-in-javascript)
+
+30. ## Synchronous VS Asynchronous Code in JavaScript 
+    [Read Blog](https://vedpandeydev.hashnode.dev/synchronous-vs-asynchronous-javascript)
