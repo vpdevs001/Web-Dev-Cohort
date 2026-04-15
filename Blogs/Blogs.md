@@ -89,3 +89,6 @@
 
 30. ## Synchronous VS Asynchronous Code in JavaScript 
     [Read Blog](https://vedpandeydev.hashnode.dev/synchronous-vs-asynchronous-javascript)
+
+31. ## Async/Await in JavaScript: Writing Cleaner Asynchronous Code
+    [Read Blog](https://vedpandeydev.hashnode.dev/async-await-in-javascript-writing-cleaner-asynchronous-code)
