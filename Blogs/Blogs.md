@@ -92,3 +92,6 @@
 
 31. ## Async/Await in JavaScript: Writing Cleaner Asynchronous Code
     [Read Blog](https://vedpandeydev.hashnode.dev/async-await-in-javascript-writing-cleaner-asynchronous-code)
+
+32. ## JavaScript Promises Expalined For Beginners
+    [Read Blog](https://vedpandeydev.hashnode.dev/javascript-promises-explained-for-beginners)
