@@ -95,3 +95,6 @@
 
 32. ## JavaScript Promises Expalined For Beginners
     [Read Blog](https://vedpandeydev.hashnode.dev/javascript-promises-explained-for-beginners)
+
+33. ## Understanding the this Keyword in JavaScript
+    [Read Blog](https://vedpandeydev.hashnode.dev/understanding-the-this-keyword-in-javascript)
