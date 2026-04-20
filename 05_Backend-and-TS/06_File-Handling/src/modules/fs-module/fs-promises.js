@@ -1,7 +1,5 @@
-import fs from "node:fs/promises"
+import fs from "node:fs/promises";
 
+const data = await fs.readFile("promise.txt", "utf-8");
 
-const data = await fs.readFile("promise.txt" , "utf-8")
-
-console.log(data)
-
+console.log(data);

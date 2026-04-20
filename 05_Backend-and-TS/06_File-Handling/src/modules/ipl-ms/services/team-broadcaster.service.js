@@ -1,6 +1,6 @@
 import ApiError from "../../../common/utils/api-error.js";
 import Team from "../models/team.model.js";
-import Broadcaster from "../models/broadcaster.model.js"
+import Broadcaster from "../models/broadcaster.model.js";
 import TeamBroadcaster from "../models/team-broadcaster.model.js";
 
 const assignBroadcaster = async ({ teamId, broadcasterId }) => {
@@ -19,6 +19,9 @@ const assignBroadcaster = async ({ teamId, broadcasterId }) => {
     throw ApiError.conflict("Broadcaster already assigned to this team");
   }
 
-  const teamBroadcaster = await TeamBroadcaster.create({ teamId, broadcasterId });
+  const teamBroadcaster = await TeamBroadcaster.create({
+    teamId,
+    broadcasterId,
+  });
   return teamBroadcaster;
 };

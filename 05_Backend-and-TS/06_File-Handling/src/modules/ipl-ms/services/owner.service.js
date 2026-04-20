@@ -22,20 +22,19 @@ const getOwnerById = async (id) => {
   return owner;
 };
 
-const updateOwner = async(id, { name, company })=>{
-    const owner = await Owner.findByIdAndUpdate(
-        id,
-        {name , company},
-        {new:true , runValidators:true}
-    );
+const updateOwner = async (id, { name, company }) => {
+  const owner = await Owner.findByIdAndUpdate(
+    id,
+    { name, company },
+    { new: true, runValidators: true },
+  );
 
-    if(!owner){
-         throw ApiError.notFound("Owner not found");
-    };
+  if (!owner) {
+    throw ApiError.notFound("Owner not found");
+  }
 
-
-    return owner;
-}
+  return owner;
+};
 
 const deleteOwner = async (id) => {
   const owner = await Owner.findByIdAndDelete(id);
@@ -45,5 +44,4 @@ const deleteOwner = async (id) => {
   return owner;
 };
 
-
-export {createOwner , getAllOwners , getOwnerById , updateOwner , deleteOwner}
+export { createOwner, getAllOwners, getOwnerById, updateOwner, deleteOwner };

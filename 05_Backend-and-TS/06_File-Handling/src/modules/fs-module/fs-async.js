@@ -1,5 +1,4 @@
-import fs from "node:fs"
-
+import fs from "node:fs";
 
 // fs.writeFile("async.txt" , "Hello Async!" , (err)=>{
 //     if(err){
@@ -17,12 +16,12 @@ import fs from "node:fs"
 //     console.log("READ:" , data)
 // } )
 
-fs.readFile("a.txt" , "utf-8" , (error , data)=>{
-    fs.writeFile("b.txt" , data , (err)=>{
-        fs.appendFile("b.txt" , "\nDone" , (err)=>{
-            fs.unlink("a.txt" , (err)=>{
-                console.log("a.txt deleted")
-            })
-        })
-    })
-})
+fs.readFile("a.txt", "utf-8", (error, data) => {
+  fs.writeFile("b.txt", data, (err) => {
+    fs.appendFile("b.txt", "\nDone", (err) => {
+      fs.unlink("a.txt", (err) => {
+        console.log("a.txt deleted");
+      });
+    });
+  });
+});

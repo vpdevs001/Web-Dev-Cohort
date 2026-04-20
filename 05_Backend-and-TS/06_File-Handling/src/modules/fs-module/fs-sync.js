@@ -1,8 +1,8 @@
-import fs from "node:fs"
+import fs from "node:fs";
 
 // 1. WRITE
 
-fs.writeFileSync("test.txt" , "kya haal chal")
+fs.writeFileSync("test.txt", "kya haal chal");
 
 // 2. READ
 // const data = fs.readFileSync("test.txt" , "utf-8")
@@ -17,7 +17,6 @@ fs.writeFileSync("test.txt" , "kya haal chal")
 
 // fs.renameSync("test.txt" , "test1.txt")
 
-
 // fs.cpSync("test1.txt" , "finalTest.txt")
 
-fs.rmdirSync("myFolder")
+fs.rmdirSync("myFolder");

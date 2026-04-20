@@ -11,7 +11,7 @@ import {
   sendVerificationEmail,
   sendResetPasswordEmail,
 } from "../../common/config/email.js";
-import fs from "node:fs"
+import fs from "node:fs";
 import imagekit from "../../common/config/imagekit.js";
 
 // Hash refresh token before storing — same approach as reset tokens
@@ -162,40 +162,39 @@ const getMe = async (userId) => {
   return user;
 };
 
-const avatarUpload = async(userId , file)=>{
+const avatarUpload = async (userId, file) => {
   try {
     const fileStream = fs.createReadStream(file.path);
     const uploadResponse = await imagekit.files.upload({
-      file:fileStream,
-      fileName:file.filename,
-      folder:"/user-avatars"
-    })
+      file: fileStream,
+      fileName: file.filename,
+      folder: "/user-avatars",
+    });
 
     await User.findByIdAndUpdate(
       userId,
-      {avatar:uploadResponse.url},
-      {new:true}
+      { avatar: uploadResponse.url },
+      { new: true },
     );
 
     fs.unlinkSync(file.path);
 
     return {
-      url:uploadResponse.url,
-      fileId:uploadResponse.fileId
-    }
-    
+      url: uploadResponse.url,
+      fileId: uploadResponse.fileId,
+    };
   } catch (error) {
     try {
-      if(file.path && fs.existsSync(file.path)){
+      if (file.path && fs.existsSync(file.path)) {
         fs.unlinkSync(file.path);
       }
     } catch (error) {
-       console.error("Error deleting temp file:", err);
+      console.error("Error deleting temp file:", err);
     }
 
     throw error;
   }
-}
+};
 
 export {
   register,
@@ -206,5 +205,5 @@ export {
   forgotPassword,
   resetPassword,
   getMe,
-  avatarUpload
+  avatarUpload,
 };
