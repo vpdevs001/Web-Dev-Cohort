@@ -130,3 +130,6 @@
 
 33. ## Inside Linux File System
     [Read Blog](https://vedpandeydev.hashnode.dev/inside-the-linux-file-system)
+
+34. ## Understanding The `this` keyword in JavaScript
+    [Read Blog](https://vedpandeydev.hashnode.dev/understanding-the-this-keyword-in-javascript)
