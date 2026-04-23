@@ -125,7 +125,6 @@
     [Read Blog](https://vedpandeydev.hashnode.dev/async-await-in-javascript-writing-cleaner-asynchronous-code)
 
 32. ## JavaScript Promises Expalined For Beginners
-
     [Read Blog](https://vedpandeydev.hashnode.dev/javascript-promises-explained-for-beginners)
 
 33. ## Inside Linux File System
@@ -133,3 +132,6 @@
 
 34. ## Understanding The `this` keyword in JavaScript
     [Read Blog](https://vedpandeydev.hashnode.dev/understanding-the-this-keyword-in-javascript)
+
+34. ## Maps & Sets: The Modern Way to store data
+    [Read Blog](https://vedpandeydev.hashnode.dev/maps-sets-the-modern-way-to-store-data)
