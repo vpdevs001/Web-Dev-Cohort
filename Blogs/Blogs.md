@@ -133,5 +133,8 @@
 34. ## Understanding The `this` keyword in JavaScript
     [Read Blog](https://vedpandeydev.hashnode.dev/understanding-the-this-keyword-in-javascript)
 
-34. ## Maps & Sets: The Modern Way to store data
+35. ## Maps & Sets: The Modern Way to store data
     [Read Blog](https://vedpandeydev.hashnode.dev/maps-sets-the-modern-way-to-store-data)
+
+36. ## Biggest Mystery Solved: Spread VS Rest Operator
+    [Read Blog](https://vedpandeydev.hashnode.dev/biggest-mystery-solved-spread-vs-rest-operators)
