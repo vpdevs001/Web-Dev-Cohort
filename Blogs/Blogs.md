@@ -147,3 +147,7 @@
 37. ## The Truth About `new` Keyword in JavaScript
 
     [Read Blog](https://vedpandeydev.hashnode.dev/the-truth-about-new-keyword-in-javascript)
+
+38. ## Masterclas on JavaScript Callbacks
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/masterclass-on-callbacks-in-javascript)
