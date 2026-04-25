@@ -151,3 +151,7 @@
 38. ## Masterclas on JavaScript Callbacks
 
     [Read Blog](https://vedpandeydev.hashnode.dev/masterclass-on-callbacks-in-javascript)
+
+39. ## Make Data Readable: Array Flatten in JavaScript
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/make-data-readable-array-flatten-in-javascript)
