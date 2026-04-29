@@ -159,3 +159,7 @@
 40. ## String Polyfills and Common Interview Methods in JavaScript
 
     [Read Blog](https://vedpandeydev.hashnode.dev/string-polyfills-and-common-interview-methods-in-javascript)
+
+41. ## Async Code in Node.js: Callbacks and Promises
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/async-code-in-node-js-callbacks-and-promises)
