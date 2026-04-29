@@ -163,3 +163,7 @@
 41. ## Async Code in Node.js: Callbacks and Promises
 
     [Read Blog](https://vedpandeydev.hashnode.dev/async-code-in-node-js-callbacks-and-promises)
+
+42. ## Blocking vs Non-Blocking Code in Node.js
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/blocking-vs-non-blocking-code-in-node-js)
