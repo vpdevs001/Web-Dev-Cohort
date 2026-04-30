@@ -171,3 +171,7 @@
 43. ## What is Node.js? JavaScript on the Server Explained
 
     [Read Blog](https://vedpandeydev.hashnode.dev/what-is-node-js-javascript-on-the-server-explained)
+
+44. ## The Node.js Event Loop Explained
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/the-node-js-event-loop-explained)
