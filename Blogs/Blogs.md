@@ -175,3 +175,7 @@
 44. ## The Node.js Event Loop Explained
 
     [Read Blog](https://vedpandeydev.hashnode.dev/the-node-js-event-loop-explained)
+
+45. ## Why Node.js is Perfect for Building Fast Web Applications
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/why-node-js-is-perfect-for-building-fast-web-applications)
