@@ -167,3 +167,7 @@
 42. ## Blocking vs Non-Blocking Code in Node.js
 
     [Read Blog](https://vedpandeydev.hashnode.dev/blocking-vs-non-blocking-code-in-node-js)
+
+43. ## What is Node.js? JavaScript on the Server Explained
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/what-is-node-js-javascript-on-the-server-explained)
