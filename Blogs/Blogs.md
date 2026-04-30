@@ -179,3 +179,7 @@
 45. ## Why Node.js is Perfect for Building Fast Web Applications
 
     [Read Blog](https://vedpandeydev.hashnode.dev/why-node-js-is-perfect-for-building-fast-web-applications)
+
+46. ## How Node.js Handles Multiple Requests with a Single Thread
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/how-node-js-handles-multiple-requests-with-a-single-thread)
