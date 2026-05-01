@@ -191,3 +191,7 @@
 48. ## REST API Design Made Simple
 
     [Read Blog](https://vedpandeydev.hashnode.dev/rest-api-design-made-simple)
+
+49. ## Creating Routes and Handling Requests with Express
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/creating-routes-and-handling-requests-with-express)
