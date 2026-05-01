@@ -199,3 +199,7 @@
 50. ## URL Parameters vs Query Strings in Express.js
 
     [Read Blog](https://vedpandeydev.hashnode.dev/url-parameters-vs-query-strings-in-express-js)
+
+51. ## Handling File Uploads in Express with Multer
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/handling-file-uploads-in-express-with-multer)
