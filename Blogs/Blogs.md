@@ -195,3 +195,7 @@
 49. ## Creating Routes and Handling Requests with Express
 
     [Read Blog](https://vedpandeydev.hashnode.dev/creating-routes-and-handling-requests-with-express)
+
+50. ## URL Parameters vs Query Strings in Express.js
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/url-parameters-vs-query-strings-in-express-js)
