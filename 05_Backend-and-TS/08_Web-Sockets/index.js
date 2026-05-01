@@ -8,7 +8,7 @@ import { Server } from "socket.io";
 
 import { publisher, redis, subscriber } from "./redis-connection.js";
 
-const CHECKBOX_SIZE = 100;
+const CHECKBOX_SIZE = 10000;
 const CHECKBOX_STATE_KEY = "checkbox-state";
 
 async function main() {
@@ -33,9 +33,7 @@ async function main() {
 
   // Sockets
   io.on("connection", (socket) => {
-    // console.log(`Socket connecte, ${socket.id}`);
     socket.on("client:checkbox:change", async (data) => {
-      //   console.log(data);
       const lastOperationTime = await redis.get(`rate-limiting:${socket.id}`);
 
       if (lastOperationTime) {
@@ -45,6 +43,7 @@ async function main() {
           return;
         }
       }
+      
       await redis.set(`rate-limiting:${socket.id}`, Date.now());
 
       const exisitingState = await redis.get(CHECKBOX_STATE_KEY);

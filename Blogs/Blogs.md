@@ -203,3 +203,7 @@
 51. ## Handling File Uploads in Express with Multer
 
     [Read Blog](https://vedpandeydev.hashnode.dev/handling-file-uploads-in-express-with-multer)
+
+52. ## Storing Uploaded Files and Serving Them in Express
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/storing-uploaded-files-and-serving-them-in-express)
