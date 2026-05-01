@@ -187,3 +187,7 @@
 47. ## Setting Up Your First Node.js Application Step-by-Step
 
     [Read Blog](https://vedpandeydev.hashnode.dev/setting-up-your-first-node-js-application-step-by-step)
+
+48. ## REST API Design Made Simple
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/rest-api-design-made-simple)
