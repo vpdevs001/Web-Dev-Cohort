@@ -207,3 +207,7 @@
 52. ## Storing Uploaded Files and Serving Them in Express
 
     [Read Blog](https://vedpandeydev.hashnode.dev/storing-uploaded-files-and-serving-them-in-express)
+
+53. ## What is Middleware in Express and How It Works
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/what-is-middleware-in-express-and-how-it-works)
