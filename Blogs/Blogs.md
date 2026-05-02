@@ -211,3 +211,7 @@
 53. ## What is Middleware in Express and How It Works
 
     [Read Blog](https://vedpandeydev.hashnode.dev/what-is-middleware-in-express-and-how-it-works)
+
+54. ## JWT Authentication in Node.js Explained Simply
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/what-is-middleware-in-express-and-how-it-works)
