@@ -90,12 +90,11 @@
       }
 
       #container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
-        gap: 18px;
-        max-width: 1100px;
+        position: relative;
         width: 100%;
-        padding: 3.5rem;
+        max-width: 1100px;
+        height: 80vh;
+        overflow-y: auto;
         background: var(--glass-bg);
         border-radius: 35px;
         backdrop-filter: blur(25px);
@@ -104,7 +103,6 @@
           0 20px 60px rgba(0, 0, 0, 0.5),
           0 0 80px rgba(255, 140, 66, 0.1),
           inset 0 2px 0 rgba(255, 255, 255, 0.1);
-        position: relative;
         z-index: 2;
       }
 
@@ -249,7 +247,46 @@
       }
     </style>
   </head>
-  <body>
+  <body style="padding-top: 56px">
+    <nav
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 56px;
+        background: rgba(45, 27, 61, 0.9);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 24px;
+        z-index: 1000;
+      "
+    >
+      <a
+        href="/api/auth/signin"
+        id="btn-login"
+        style="
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 8px 20px;
+          border: none;
+          border-radius: 10px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          color: #fff;
+          background: linear-gradient(135deg, #ff8c42, #e67e22);
+          cursor: pointer;
+          text-decoration: none;
+          box-shadow: 0 0 16px rgba(255, 140, 66, 0.4);
+        "
+      >
+        Login / Sign Up
+      </a>
+    </nav>
     <div id="error-alert"></div>
     <h1>1 Million CheckBoxes</h1>
     <div id="container"></div>
@@ -257,102 +294,232 @@
     <script>
       const socket = io();
       const container = document.getElementById("container");
+
+      const TOTAL = 1_000_000;
+      const CB_SIZE = 28;
+      const CB_GAP = 6;
+      const CB_FULL = CB_SIZE + CB_GAP;
+      const BUFFER_ROWS = 5;
+
+      let COLS = 1;
+      let ROW_HEIGHT = CB_FULL;
+      let state = new Array(TOTAL).fill(false);
+      let isLoggedIn = false;
       let isRateLimited = false;
 
-      socket.on("server:error", (data) => {
-        const errorMessage = data.error;
-        handleServerError(errorMessage);
-      });
+      const inner = document.createElement("div");
+      inner.style.cssText = "position:relative;width:100%;";
+      container.appendChild(inner);
 
-      function handleServerError(message) {
-        const errorAlert = document.getElementById("error-alert");
+      function recalcCols() {
+        COLS = Math.max(1, Math.floor((container.clientWidth - 32) / CB_FULL));
+        ROW_HEIGHT = CB_FULL;
+        const totalRows = Math.ceil(TOTAL / COLS);
+        inner.style.height = `${totalRows * ROW_HEIGHT}px`;
+      }
 
-        // Check if it's a rate limiting error
-        if (message.toLowerCase().includes("wait")) {
-          showRateLimitError(errorAlert);
-        } else {
-          // Show other errors normally
-          showGeneralError(errorAlert, message);
+      const visible = new Map();
+
+      function render() {
+        const scrollTop = container.scrollTop;
+        const viewH = container.clientHeight;
+        const startRow = Math.max(
+          0,
+          Math.floor(scrollTop / ROW_HEIGHT) - BUFFER_ROWS,
+        );
+        const endRow =
+          Math.ceil((scrollTop + viewH) / ROW_HEIGHT) + BUFFER_ROWS;
+        const startIdx = startRow * COLS;
+        const endIdx = Math.min(TOTAL - 1, endRow * COLS - 1);
+
+        for (const [idx, el] of visible) {
+          if (idx < startIdx || idx > endIdx) {
+            el.remove();
+            visible.delete(idx);
+          }
+        }
+
+        for (let i = startIdx; i <= endIdx; i++) {
+          if (visible.has(i)) {
+            visible.get(i).checked = state[i];
+            continue;
+          }
+
+          const row = Math.floor(i / COLS);
+          const col = i % COLS;
+
+          const cb = document.createElement("input");
+          cb.type = "checkbox";
+          cb.id = `cb-${i}`;
+          cb.checked = state[i];
+          cb.style.cssText = `
+      position: absolute;
+      top:  ${row * ROW_HEIGHT + 16}px;
+      left: ${col * CB_FULL + 16}px;
+      width:  ${CB_SIZE}px;
+      height: ${CB_SIZE}px;
+      margin: 0;
+    `;
+
+          if (isLoggedIn) {
+            cb.addEventListener("change", (e) => {
+              if (isRateLimited) {
+                e.target.checked = state[i];
+                return;
+              }
+              const newChecked = e.target.checked;
+              e.target.checked = state[i];
+              socket.emit("client:checkbox:change", {
+                index: i,
+                checked: newChecked,
+              });
+            });
+          } else {
+            cb.disabled = true;
+            cb.style.cursor = "not-allowed";
+            cb.style.opacity = "0.5";
+          }
+
+          inner.appendChild(cb);
+          visible.set(i, cb);
         }
       }
 
-      function showRateLimitError(errorAlert) {
-        if (isRateLimited) return; // Prevent multiple calls
+      container.addEventListener("scroll", () => requestAnimationFrame(render));
+      window.addEventListener("resize", () => {
+        recalcCols();
+        render();
+      });
 
+
+      async function handleOAuthRedirect() {
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get("code");
+        if (!code) return false;
+        window.history.replaceState(
+          {},
+          document.title,
+          window.location.pathname,
+        );
+        try {
+          const res = await fetch("/api/auth/callback", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include",
+            body: JSON.stringify({ code }),
+          });
+          return res.ok;
+        } catch {
+          return false;
+        }
+      }
+
+      async function checkAuth() {
+        const res = await fetch("/api/auth/me", { credentials: "include" });
+        if (!res.ok) return null;
+        const { user } = await res.json();
+        return user;
+      }
+
+      function showLoggedIn(user) {
+        const loginBtn = document.getElementById("btn-login");
+        loginBtn.outerHTML = `
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span style="color:rgba(255,255,255,0.7);font-size:0.85rem;font-weight:500;">
+        👤 ${user.name ?? user.email ?? "User"}
+      </span>
+      <button id="btn-logout" style="
+        padding:8px 20px;border-radius:10px;
+        border:1px solid rgba(248,113,113,0.3);
+        font-size:0.85rem;font-weight:600;
+        background:rgba(248,113,113,0.15);
+        color:#f87171;cursor:pointer;
+      ">Logout</button>
+    </div>
+  `;
+        document
+          .getElementById("btn-logout")
+          .addEventListener("click", async () => {
+            await fetch("/api/auth/logout", {
+              method: "POST",
+              credentials: "include",
+            });
+            window.location.reload();
+          });
+      }
+
+
+      socket.on("server:error", ({ error }) => {
+        error.toLowerCase().includes("wait")
+          ? showRateLimitError()
+          : showGeneralError(error);
+      });
+
+      function showRateLimitError() {
+        if (isRateLimited) return;
         isRateLimited = true;
-        container.classList.add("rate-limited");
 
-        const COOLDOWN = 3;
-        let timeRemaining = COOLDOWN;
-
+        const errorAlert = document.getElementById("error-alert");
+        let t = 5;
         errorAlert.innerHTML = `
-          <div class="error-message">⏱️ Rate Limited</div>
-          <div class="countdown">Please wait ${timeRemaining}s before next action</div>
-        `;
+    <div class="error-message">⏱️ Rate Limited</div>
+    <div class="countdown">Please wait ${t}s before next action</div>
+  `;
         errorAlert.classList.add("show");
 
-        const countdownInterval = setInterval(() => {
-          timeRemaining--;
-          if (timeRemaining > 0) {
+        const iv = setInterval(() => {
+          t--;
+          if (t > 0) {
             errorAlert.querySelector(".countdown").textContent =
-              `Please wait ${timeRemaining}s before next action`;
+              `Please wait ${t}s before next action`;
           } else {
-            clearInterval(countdownInterval);
+            clearInterval(iv);
             isRateLimited = false;
-            container.classList.remove("rate-limited");
             errorAlert.classList.remove("show");
           }
         }, 1000);
       }
 
-      function showGeneralError(errorAlert, message) {
+      function showGeneralError(message) {
+        const errorAlert = document.getElementById("error-alert");
         errorAlert.innerHTML = `
-          <div class="error-message">⚠️ Error</div>
-          <div class="countdown">${message}</div>
-        `;
+    <div class="error-message">⚠️ Error</div>
+    <div class="countdown">${message}</div>
+  `;
         errorAlert.classList.add("show");
-
-        setTimeout(() => {
-          errorAlert.classList.remove("show");
-        }, 4000);
+        setTimeout(() => errorAlert.classList.remove("show"), 4000);
       }
 
-      socket.on("server:checkbox:change", (data) => {
-        const { index, checked } = data;
-        const input = document.getElementById(`checkbox-${index}`);
-        if (input) {
-          input.checked = checked;
-        }
+
+      socket.on("server:checkbox:change", ({ index, checked }) => {
+        state[index] = checked;
+        const el = visible.get(index);
+        if (el) el.checked = checked;
       });
 
-      async function fetchStateFromServer() {
-        while (container.firstChild) {
-          container.removeChild(container.firstChild);
+      socket.on("server:checkbox:revert", ({ index, checked }) => {
+        state[index] = checked;
+        const el = visible.get(index);
+        if (el) el.checked = checked;
+      });
+
+
+      window.addEventListener("load", async () => {
+        await handleOAuthRedirect();
+
+        const user = await checkAuth();
+        if (user) {
+          isLoggedIn = true;
+          showLoggedIn(user);
         }
 
-        const response = await fetch("/checkboxes", { method: "GET" });
-        const data = await response.json();
+        const res = await fetch("/checkboxes");
+        const data = await res.json();
+        if (data?.checkboxes) state = data.checkboxes;
 
-        if (data && data.checkboxes) {
-          data.checkboxes.forEach((serverValue, index) => {
-            const input = document.createElement("input");
-
-            input.type = "checkbox";
-            input.id = `checkbox-${index}`;
-            input.checked = serverValue;
-
-            input.addEventListener("change", (e) => {
-              const checked = e.target.checked;
-              console.log(checked, index);
-              socket.emit("client:checkbox:change", { index, checked });
-            });
-
-            container.appendChild(input);
-          });
-        }
-      }
-
-      window.addEventListener("load", fetchStateFromServer);
+        recalcCols();
+        render();
+      });
     </script>
   </body>
 </html>
