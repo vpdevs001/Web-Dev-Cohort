@@ -214,4 +214,8 @@
 
 54. ## JWT Authentication in Node.js Explained Simply
 
-    [Read Blog](https://vedpandeydev.hashnode.dev/what-is-middleware-in-express-and-how-it-works)
+    [Read Blog](https://vedpandeydev.hashnode.dev/jwt-authentication-in-node-js-explained-simply)
+
+55. ## Sessions vs JWT vs Cookies: Understanding Authentication Approaches
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/sessions-vs-jwt-vs-cookies-understanding-authentication-approaches)
