@@ -17,17 +17,19 @@
 // Add a Decrement button (id: "decrement") that decreases count by 1
 // Add a Reset button (id: "reset") that sets count back to 0
 
-
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div>
       <h2 id="count">Count: {count}</h2>
-      <button id="increment" onClick={() => setCount(count + 1)}>
+      <button id="increment" onClick={() => setCount((count) => count + 1)}>
         Increment
       </button>
-      <button id="decrement" onClick={() => setCount(count - 1)}>
+      <button
+        id="decrement"
+        onClick={() => setCount((count) => Math.max(count - 1, 0))}
+      >
         Decrement
       </button>
       <button id="reset" onClick={() => setCount(0)}>
