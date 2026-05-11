@@ -1,23 +1,31 @@
-import express from "express";
-import type { Router } from "express";
-
+import { FastifyInstance } from "fastify";
 import AuthenticationController from "./controller";
-import { restrictToAuthenticatedUser } from "../middleware/auth-middleware";
 
 const authenticationController = new AuthenticationController();
 
-export const authRouter: Router = express.Router();
+export async function authRouter(fastify: FastifyInstance) {
+  fastify.post(
+    "/sign-up",
+    authenticationController.handleSignup.bind(authenticationController),
+  );
 
-authRouter.post(
-  "/sign-up",
-  authenticationController.handleSignup.bind(authenticationController),
-);
-authRouter.post(
-  "/sign-in",
-  authenticationController.handleSignin.bind(authenticationController),
-);
-authRouter.get(
-  "/me",
-  restrictToAuthenticatedUser(),
-  authenticationController.handleMe.bind(authenticationController),
-);
+  fastify.post(
+    "/sign-in",
+    authenticationController.handleSignin.bind(authenticationController),
+  );
+
+  fastify.get(
+    "/me",
+    {
+      preHandler: async (request, _) => {
+        await request.jwtVerify();
+      },
+    },
+    authenticationController.handleMe.bind(authenticationController),
+  );
+
+  fastify.post(
+    "/refresh",
+    authenticationController.handleRefresh.bind(authenticationController),
+  );
+}

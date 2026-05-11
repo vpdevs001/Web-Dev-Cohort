@@ -1,18 +1,29 @@
-import type { Request, Response } from "express";
+import { type FastifyRequest, type FastifyReply } from "fastify";
 import { randomBytes, createHmac } from "node:crypto";
 import { signinPayloadModel, signupPayloadModel } from "./models";
 import { db } from "../../db";
 import { usersTable } from "../../db/schema";
 import { eq } from "drizzle-orm";
-import { createUserToken } from "./utils/token";
-import type { UserTokenPayload } from "./utils/token";
+
+interface UserTokenPayload {
+  id: string;
+}
+
+declare module "@fastify/jwt" {
+  interface FastifyJWT {
+    payload: UserTokenPayload;
+    user: UserTokenPayload;
+  }
+}
 
 class AuthenticationController {
-  public async handleSignup(req: Request, res: Response) {
-    const validationResult = await signupPayloadModel.safeParseAsync(req.body);
+  public async handleSignup(request: FastifyRequest, reply: FastifyReply) {
+    const validationResult = await signupPayloadModel.safeParseAsync(
+      request.body,
+    );
 
     if (validationResult.error)
-      return res.status(400).json({
+      return reply.status(400).send({
         message: "body validation failed",
         error: validationResult.error.issues,
       });
@@ -25,7 +36,7 @@ class AuthenticationController {
       .where(eq(usersTable.email, email));
 
     if (userEmailResult.length > 0)
-      return res.status(400).json({
+      return reply.status(400).send({
         error: "duplicate entry",
         message: `user with email ${email} already exists`,
       });
@@ -44,17 +55,19 @@ class AuthenticationController {
       })
       .returning({ id: usersTable.id });
 
-    return res.status(201).json({
+    return reply.status(201).send({
       message: "user has been created successfully",
       data: { id: result?.id },
     });
   }
 
-  public async handleSignin(req: Request, res: Response) {
-    const validationResult = await signinPayloadModel.safeParseAsync(req.body);
+  public async handleSignin(request: FastifyRequest, reply: FastifyReply) {
+    const validationResult = await signinPayloadModel.safeParseAsync(
+      request.body,
+    );
 
     if (validationResult.error)
-      return res.status(400).json({
+      return reply.status(400).send({
         message: "body validation failed",
         error: validationResult.error.issues,
       });
@@ -67,36 +80,77 @@ class AuthenticationController {
       .where(eq(usersTable.email, email));
 
     if (!userSelect)
-      return res
+      return reply
         .status(404)
-        .json({ message: `user with email ${email} does not exists` });
+        .send({ message: `user with email ${email} does not exists` });
 
     const salt = userSelect.salt!;
     const hash = createHmac("sha256", salt).update(password).digest("hex");
 
     if (userSelect.password !== hash)
-      return res
+      return reply
         .status(400)
-        .json({ message: `email or password is incorrect` });
+        .send({ message: `email or password is incorrect` });
 
-    const token = createUserToken({ id: userSelect.id });
+    const accessToken = request.server.jwt.sign(
+      { id: userSelect.id },
+      { expiresIn: "15m" },
+    );
 
-    return res.json({ message: "Signin Success", data: { token } });
+    const refreshToken = request.server.jwt.sign(
+      { id: userSelect.id },
+      { expiresIn: "7d" },
+    );
+
+    reply.setCookie("refreshToken", refreshToken, {
+      httpOnly: true,
+      secure: false,
+      sameSite: "strict",
+      path: "/",
+      maxAge: 60 * 60 * 24 * 7,
+    });
+
+    return reply.send({
+      message: "Signin Success",
+      data: { accessToken },
+    });
   }
 
-  public async handleMe(req: Request, res: Response) {
-    // @ts-ignore
-    const { id } = req.user! as UserTokenPayload;
+  public async handleMe(request: FastifyRequest, reply: FastifyReply) {
+    await request.jwtVerify();
+    const { id } = request.user as UserTokenPayload;
 
     const [userResult] = await db
       .select()
       .from(usersTable)
       .where(eq(usersTable.id, id));
 
-    return res.json({
+    return reply.send({
       firstName: userResult?.firstName,
       lastName: userResult?.lastName,
       email: userResult?.email,
+    });
+  }
+
+  public async handleRefresh(request: FastifyRequest, reply: FastifyReply) {
+    const refreshToken = request.cookies.refreshToken;
+
+    if (!refreshToken)
+      return reply.status(401).send({ message: "no refresh token provided" });
+
+    const payload = request.server.jwt.verify<UserTokenPayload>(refreshToken);
+
+    if (!payload)
+      return reply.status(401).send({ message: "invalid refresh token" });
+
+    const accessToken = request.server.jwt.sign(
+      { id: payload.id },
+      { expiresIn: "15m" },
+    );
+
+    return reply.send({
+      message: "token refreshed",
+      data: { accessToken },
     });
   }
 }

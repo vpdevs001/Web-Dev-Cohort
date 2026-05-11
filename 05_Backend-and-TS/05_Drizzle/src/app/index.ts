@@ -1,19 +1,17 @@
-import express from "express";
-import type { Express } from "express";
-import { authenticationMiddleware } from "./middleware/auth-middleware";
+import { FastifyInstance } from "fastify";
+import jwt from "@fastify/jwt";
+import cookie from "@fastify/cookie";
 import { authRouter } from "./auth/routes";
 
-export function createApplication(): Express {
-  const app = express();
-
-  app.use(express.json());
-  app.use(authenticationMiddleware());
-
-  app.get("/", (req, res) => {
-    return res.json({ message: "Welcome to Ved Auth Service" });
+export async function createApplication(fastify: FastifyInstance) {
+  fastify.get("/", (_, reply) => {
+    reply.send({ message: "Welcome to Ved Auth Service" });
   });
 
-  app.use("/auth", authRouter);
+  // plugins
+  fastify.register(jwt, { secret: process.env.JWT_SECRET! });
+  fastify.register(cookie);
 
-  return app;
+  // routes
+  fastify.register(authRouter, { prefix: "/auth" });
 }
