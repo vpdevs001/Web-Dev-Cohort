@@ -14,7 +14,7 @@ export const onOrderPlaced = inngest.createFunction(
     });
 
     async function logGreeting() {
-        console.log(greeting);
+      console.log(greeting);
     }
 
     await step.run("log-greeting", async () => {
