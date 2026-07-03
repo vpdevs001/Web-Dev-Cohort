@@ -1,20 +1,20 @@
-import { FastifyInstance } from "fastify";
+import { expressInstance } from "express";
 import AuthenticationController from "./controller";
 
 const authenticationController = new AuthenticationController();
 
-export async function authRouter(fastify: FastifyInstance) {
-  fastify.post(
+export async function authRouter(express: expressInstance) {
+  express.post(
     "/sign-up",
     authenticationController.handleSignup.bind(authenticationController),
   );
 
-  fastify.post(
+  express.post(
     "/sign-in",
     authenticationController.handleSignin.bind(authenticationController),
   );
 
-  fastify.get(
+  express.get(
     "/me",
     {
       preHandler: async (request, _) => {
@@ -24,7 +24,7 @@ export async function authRouter(fastify: FastifyInstance) {
     authenticationController.handleMe.bind(authenticationController),
   );
 
-  fastify.post(
+  express.post(
     "/refresh",
     authenticationController.handleRefresh.bind(authenticationController),
   );
