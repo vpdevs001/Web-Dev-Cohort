@@ -1,16 +1,40 @@
 # 🌐 Web Dev Cohort 2026 — Learning Journey
 
-> A personal learning repository documenting my progress in the Web Dev Cohort 2026 by [ChaiCode](https://chaicode.com), guided by Hitesh Choudhary Sir and Piyush Garg Sir.
+> A personal learning repository documenting my progress and graduation from the Web Dev Cohort 2026 by [ChaiCode](https://chaicode.com), guided by Hitesh Choudhary Sir and Piyush Garg Sir.
+
+[![Cohort Completed](https://img.shields.io/badge/Status-Completed%20%F0%9F%8E%89-success?style=for-the-badge)](assets/certificate.pdf)
+[![Projects Built](https://img.shields.io/badge/Projects%20Built-16-blue?style=for-the-badge)](10_Projects/)
+[![Articles Written](https://img.shields.io/badge/Articles%20Written-66-orange?style=for-the-badge)](Blogs/Blogs.md)
+[![Certificate](https://img.shields.io/badge/Certificate-View%20PDF-red?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](assets/certificate.pdf)
+
+---
+
+## 📜 Certificate of Completion
+
+🎓 **Successfully Graduated from Web Dev Cohort 2026!**
+
+[![View Certificate](https://img.shields.io/badge/View_Official_Certificate-PDF-E50914?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](assets/certificate.pdf)
+
+👉 **[Click here to view / download the Certificate (assets/certificate.pdf)](assets/certificate.pdf)**
 
 ---
 
 ## 🎯 About This Repository
 
-This repository is my structured workspace for learning modern web development. It contains notes, practice files, labs, and mini-projects covering everything from Git and HTML to JavaScript, backend, databases, React, Next.js, GenAI, and real-world project building.
+This repository is my structured workspace for learning modern web development. It contains notes, practice files, labs, and projects covering everything from Git and HTML to JavaScript, backend, databases, React, Next.js, GenAI, and real-world project building.
 
-The folder structure reflects the journey from fundamentals to full-stack development, and it is updated regularly as I continue learning.
+Throughout this cohort journey, I have built **16 hands-on projects** and published **66 in-depth technical articles** covering full-stack concepts, architectures, and practical engineering.
 
 This cohort is part of the Web Dev Cohort 2026 by [ChaiCode](https://chaicode.com), designed to guide learners from the basics of web development to building production-ready applications. The curriculum is taught by experienced mentors who focus on practical coding, strong fundamentals, and hands-on projects.
+
+---
+
+## 🏆 Key Milestones
+
+- 🎓 **Cohort Status:** **100% Completed**
+- 🚀 **Projects Built:** **16 Projects** spanning frontend, full-stack, AI tools, and APIs ([Explore Projects](10_Projects/))
+- ✍️ **Technical Articles:** **66 Articles** written and published on Hashnode ([Browse All Blogs](Blogs/Blogs.md))
+- 📜 **Certification:** Earned official completion certificate ([View Certificate](assets/certificate.pdf))
 
 ---
 
@@ -21,7 +45,7 @@ This cohort is part of the Web Dev Cohort 2026 by [ChaiCode](https://chaicode.co
 - **Instructors:** Hitesh Choudhary Sir and Piyush Garg Sir
 - **Focus:** Full Stack Web Development, modern tools, and real-world implementation
 - **Learning Style:** Concept-driven, project-based, and practice-heavy
-- **Status:** Classes completed • Projects completed • Only a few blogs left, coming soon
+- **Status:** **Completed 🎉** • All Classes Attended • 16 Projects Built • 66 Articles Written
 
 Hitesh Choudhary Sir is known for his clear teaching style and deep explanation of core concepts, while Piyush Garg Sir brings strong industry-oriented insights and practical development perspectives. Together, they make the cohort a valuable experience for building both confidence and real skills.
 
@@ -40,9 +64,10 @@ Web-Dev_Cohort-2026/
 ├── 07_React/               # React learning materials and exercises
 ├── 08_NextJS/              # Next.js concepts and projects
 ├── 09_GenAI/               # Generative AI learning and experiments
-├── 10_Projects/            # Personal projects and builds
-├── Blogs/                  # Blog write-ups and assignments
+├── 10_Projects/            # 16 Cohort Projects
+├── Blogs/                  # 66 Technical blog write-ups and deep dives
 ├── T-Classes/              # Extra classes and doubt-solving sessions
+├── assets/                 # Cohort certificate (certificate.pdf) & media
 └── README.md               # Project overview
 ```
 
@@ -62,18 +87,18 @@ Web-Dev_Cohort-2026/
 
 ---
 
-## 🎯 Goals
+## 🎯 Goals Achieved
 
-- Build a strong foundation in modern web development
-- Practice concepts regularly through labs and projects
-- Keep a clear record of learnings for future reference
-- Grow from beginner-level practice to real-world project building
+- Built a rock-solid foundation in modern web development
+- Practiced concepts regularly through labs and built 16 real-world projects
+- Authored 66 detailed technical blogs documenting end-to-end full-stack concepts
+- Successfully completed the cohort and earned the completion certificate
 
 ---
 
 ## 🙋‍♂️ About Me
 
-I’m Ved Pandey, a developer learning in public and documenting my journey through structured cohort-based education. This repository reflects my consistency, curiosity, and hands-on growth.
+I’m **Ved Pandey**, a 15-year-old full-stack web developer (at the time of writing this README) learning in public and documenting my journey through structured cohort-based education. This repository reflects my consistency, curiosity, and hands-on growth.
 
 Feel free to connect with me:
 
@@ -91,4 +116,4 @@ If this repository helps you or inspires your own learning journey, feel free to
 
 ---
 
-_Made with ❤️ while learning full-stack web development at ChaiCode’s Web Dev Cohort 2026._
+_Made with ❤️ while completing full-stack web development at ChaiCode’s Web Dev Cohort 2026._
