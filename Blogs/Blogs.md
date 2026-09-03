@@ -244,3 +244,22 @@
 
     [Read Blog](https://vedpandeydev.hashnode.dev/masterclass-on-typescript)
 
+62. ## Master Application Security
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/master-application-security)
+
+63. ## Modern Database Access: Prisma, Drizzle and ORMs Explained
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/modern-database-access-prisma-drizzle-and-orms-explained)
+
+64. ## Beyond Refresh: Realtime Systems with WebSockets
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/beyond-refresh-realtime-systems-with-web-sockets)
+
+65. ## Building Scalable Systems: Caching, Rate Limiting & Observability
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/building-scalable-systems-caching-rate-limiting-and-observability)
+
+66. ## Kafka Explained Like You're 5: Events, Partitions, and Consumer Groups
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/kafka-explained-like-you-re-5-events-partitions-and-consumer-groups)
