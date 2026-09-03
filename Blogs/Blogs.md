@@ -232,3 +232,11 @@
 
     [Read Blog](https://vedpandeydev.hashnode.dev/react-hooks-masterclass-usestate-useeffect-and-custom-hooks)
 
+59. ## Why NextJS Became the Default React Framework
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/why-nextjs-became-the-default-react-framework)
+
+60. ## Modern Next.js: Routing, Layouts, Server Components, API Routes & Server Actions
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/modern-next-js-routing-layouts-server-components-api-routes-server-actions)
+
