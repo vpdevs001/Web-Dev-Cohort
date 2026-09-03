@@ -219,3 +219,16 @@
 55. ## Sessions vs JWT vs Cookies: Understanding Authentication Approaches
 
     [Read Blog](https://vedpandeydev.hashnode.dev/sessions-vs-jwt-vs-cookies-understanding-authentication-approaches)
+
+56. ## React Fundamentals: Components, JSX, State, and Re-rendering
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/react-fundamentals-components-jsx-state-and-re-rendering)
+
+57. ## State Management: Context API, Prop Drilling, React.memo, useMemo, and useCallback
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/state-management-context-api-prop-drilling-react-memo-usememo-and-usecallback)
+
+58. ## React Hooks Masterclass: useState, useEffect, and Custom Hooks
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/react-hooks-masterclass-usestate-useeffect-and-custom-hooks)
+
