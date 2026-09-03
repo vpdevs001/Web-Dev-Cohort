@@ -240,3 +240,7 @@
 
     [Read Blog](https://vedpandeydev.hashnode.dev/modern-next-js-routing-layouts-server-components-api-routes-server-actions)
 
+61. ## Masterclass on TypeScript
+
+    [Read Blog](https://vedpandeydev.hashnode.dev/masterclass-on-typescript)
+
